@@ -32,3 +32,61 @@
 
 # oodgay ucklay!
 
+
+#ENCODER
+# Kate's method for a single word - THIS WORKS
+# word = gets.chomp
+# first = word.chr
+
+# if word =~ /^[aeiou]/i
+#   puts word + "ay"
+#   else
+#     word.slice!(0)
+#     puts word + first + "ay"
+# end
+
+
+# attempting to do on multiple words
+
+
+sentence=gets.chomp
+puts sentence.split
+puts "----"
+word=sentence.split
+
+word.each do |latin|
+# "#{latin}" = gets.chomp
+first = "#{latin}".chr
+char="#{latin}".length
+base = "#{latin}".slice(1..char)
+
+  if "#{latin}" =~ /^[aeiou]/i
+  puts "#{latin}" + "ay"
+  else
+   puts base + first + "ay"
+   end
+end
+#limitation of my approach - words are output not in a row
+
+#DECODER
+# Kate's method for a single word
+#plan: chop off "ay" if vowel, put the word.
+#if consanant, chop last letter, save as new var and merge new var with word
+
+word = gets.chomp
+base=word.chop!.chop!
+puts base
+
+length=base.length
+wordend=base.slice!(0..length-2)
+
+puts wordend
+
+
+# if word =~ /^[aeiou]/i
+  # puts word
+  # else
+  #   word.slice!(0)
+  #   puts word + first + "ay"
+# end
+
