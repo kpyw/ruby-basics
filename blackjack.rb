@@ -16,7 +16,7 @@
 # 2 A
 
 cards = %w(2 3 4 5 6 7 8 9 10 J Q K A) *4
-puts cards.sample(2)
+# puts cards.sample(2)
 
 
 
@@ -36,14 +36,19 @@ puts cards.sample(2)
 # 2 A
 # You have 13.
 
-cards.sample (1)
-
-if cards == "A"
-  cards=11
-  elsif cards.to_i == 0
-  cards=10
-else cards
-puts card
+# hand1=cards.sample
+# hand2=cards.sample
+# hand = [hand1, hand2]
+2.times do |hand|
+  hand=cards.sample
+  puts "your first card is a " + hand
+  if hand == "A"
+    cardval=11
+    elsif hand.to_i == 0
+    cardval=10
+    else cardval=hand
+    puts cardval
+    end
 end
 
 
