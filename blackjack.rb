@@ -15,8 +15,9 @@
 # Example Output #3:
 # 2 A
 
+#need to create a deck with 52 cards
 cards = %w(2 3 4 5 6 7 8 9 10 J Q K A) *4
-# puts cards.sample(2)
+puts cards.sample(2)
 
 
 
@@ -36,21 +37,42 @@ cards = %w(2 3 4 5 6 7 8 9 10 J Q K A) *4
 # 2 A
 # You have 13.
 
-# hand1=cards.sample
-# hand2=cards.sample
-# hand = [hand1, hand2]
-2.times do |hand|
-  hand=cards.sample
-  puts "your first card is a " + hand
-  if hand == "A"
-    cardval=11
-    elsif hand.to_i == 0
-    cardval=10
-    else cardval=hand
-    puts cardval
+# cards.sort_by {rand}
+# hand =[cards.pop, cards.pop]
+
+hand1=cards.sample
+hand2=cards.sample
+
+hand = [hand1, hand2]
+
+puts "You have a " + hand[0] + " and a " + hand[1]
+
+score=0
+hand.each do |value|
+  # hand=cards.sample
+  # puts "your first card is a " + hand
+
+  if value =~ /^[2,3,4,5,6,7,8,9]/
+    score == value.to_i end
+
+  if value =~ /^[j,k,q]/
+    score += 10 end
+
+  if /[a]/ =~ value
+        if score + 11 > 21
+          score += 1
+          #not working here
+        elsif
+          score += 11
+        end
     end
 end
 
+puts "Your score is " + score
+
+
+# end
+# puts hand[0].to_i + hand[1].to_i
 
 
 
