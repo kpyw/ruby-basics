@@ -55,7 +55,6 @@ puts "----"
 word=sentence.split
 
 word.each do |latin|
-# "#{latin}" = gets.chomp
 first = "#{latin}".chr
 char="#{latin}".length
 base = "#{latin}".slice(1..char)
@@ -69,24 +68,43 @@ end
 #limitation of my approach - words are output not in a row
 
 #DECODER
-# Kate's method for a single word
+# Kate's method for a single word -- THIS WORKS
 #plan: chop off "ay" if vowel, put the word.
 #if consanant, chop last letter, save as new var and merge new var with word
 
-word = gets.chomp
-base=word.chop!.chop!
-puts base
+# word = gets.chomp
+# base=word.chop!.chop!
+# puts base
 
-length=base.length
-wordend=base.slice!(0..length-2)
-
-puts wordend
-
-
-# if word =~ /^[aeiou]/i
-  # puts word
-  # else
-  #   word.slice!(0)
-  #   puts word + first + "ay"
+# length=base.length
+# wordend=base.slice!(length-1)
+# route=base.slice!(0..length-2)
+# if wordend=~ /^[aeiou]/i
+#   puts base
+#   else
+#     puts wordend + route
 # end
+
+#Kates method for multiple words
+#this isn't working for words that start with vowels
+pigsentence=gets.chomp
+# puts pigsentence.split
+# puts "----"
+pigword=pigsentence.split
+
+pigword.each do |piglatin|
+newpig = "#{piglatin}".chop!.chop!
+piglength = newpig.length
+pigwordend = newpig.slice!(piglength-1)
+pigroute = newpig.slice!(0..piglength-2)
+
+puts pigwordend
+puts pigroute
+
+  # if pigwordend =~ /^[aeiou]/i
+  # puts newpig
+  # else
+  #  puts pigwordend + pigroute
+  #  end
+end
 
