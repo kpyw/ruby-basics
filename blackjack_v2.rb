@@ -31,11 +31,9 @@ cards = [
  {'card'=>'K', 'value'=>10},
  {'card'=>'A', 'value'=>11}
    ]
+   #THIS ACTUALLY ONLY MAKES 13 not 52 CARDS
 # puts cards.class
 # puts cards.sample(2)
-
-
-
 
 # 2. Enhance #1 by showing the total score.
 # HINT: Consider all aces to have a value of 11.
@@ -53,24 +51,19 @@ cards = [
 # You have 13.
 
 cards.sort_by {rand}
-# hand =[cards.pop, cards.pop]
 
 hand1=cards.sample
 hand2=cards.sample
+hand3=cards.sample
 
-hand = [hand1, hand2]
+hand = [hand1, hand2, hand3]
 # puts hand1.class - hand1 is an array
 
-puts "You have a " + hand1['card'] + " and a " + hand2['card']
+# puts "You have a " + hand1['card'] + " and a " + hand2['card']
 
-score = hand1['value'].to_i + hand2['value'].to_i
+# score = hand1['value'].to_i + hand2['value'].to_i
 
-puts "You have " + score.to_s
-
-
-
-
-
+# puts "You have " + score.to_s
 
 
 # 3. Enhance #2 by adding a card if the score is less than 17.
@@ -82,10 +75,17 @@ puts "You have " + score.to_s
 # Q A
 # You have 20.
 
+score = hand1['value'].to_i + hand2['value'].to_i
 
 
-
-
+if score > 17
+  puts "You have a " + hand1['card'] + " and a " + hand2['card']
+  puts "You have " + score.to_s
+else
+  score = hand1['value'].to_i + hand2['value'].to_i + hand3['value'].to_i
+  puts "You have a " + hand1['card'] + ", " + hand2['card'] + ", " + hand3['card']
+  puts "You have " + score.to_s
+end
 
 # 4. Enhance #3 by displaying a message if the score is over 21.
 # Example Output #1:
