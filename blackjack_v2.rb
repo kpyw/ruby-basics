@@ -93,6 +93,30 @@ hand = [hand1, hand2, hand3]
 # You have 24.
 # You're busted!
 
+# score = hand1['value'].to_i + hand2['value'].to_i
+
+
+# if score > 17
+#   puts "You have a " + hand1['card'] + " and a " + hand2['card']
+#   puts "You have " + score.to_s
+# else
+#   score = hand1['value'].to_i + hand2['value'].to_i + hand3['value'].to_i
+#   puts "You have a " + hand1['card'] + ", " + hand2['card'] + ", " + hand3['card']
+#   puts "You have " + score.to_s
+# end
+
+# if score > 21
+#   puts "You're busted"
+
+# end
+
+
+# 5. Enhance #4 by considering an Ace to be 1 if it would prevent
+# the total score from going over 21.
+# Example Output #1:
+# 4 A 9
+# You have 14.
+
 score = hand1['value'].to_i + hand2['value'].to_i
 
 
@@ -101,6 +125,16 @@ if score > 17
   puts "You have " + score.to_s
 else
   score = hand1['value'].to_i + hand2['value'].to_i + hand3['value'].to_i
+
+    if score>21
+      # acevalue = {'A'=> 1}
+      # cards.pop({'card'=>'A', 'value'=>11})
+      # cards.push({'card'=>'A', 'value'=>1})
+           #trying to delete and add - unsuccessfully
+      cards.take(13)
+      cards<<{'card'=>'A', 'value'=>1}
+      score = hand1['value'].to_i + hand2['value'].to_i + hand3['value'].to_i
+      end
   puts "You have a " + hand1['card'] + ", " + hand2['card'] + ", " + hand3['card']
   puts "You have " + score.to_s
 end
@@ -109,10 +143,3 @@ if score > 21
   puts "You're busted"
 
 end
-
-
-# 5. Enhance #4 by considering an Ace to be 1 if it would prevent
-# the total score from going over 21.
-# Example Output #1:
-# 4 A 9
-# You have 14.
