@@ -75,6 +75,24 @@ hand = [hand1, hand2, hand3]
 # Q A
 # You have 20.
 
+# score = hand1['value'].to_i + hand2['value'].to_i
+
+
+# if score > 17
+#   puts "You have a " + hand1['card'] + " and a " + hand2['card']
+#   puts "You have " + score.to_s
+# else
+#   score = hand1['value'].to_i + hand2['value'].to_i + hand3['value'].to_i
+#   puts "You have a " + hand1['card'] + ", " + hand2['card'] + ", " + hand3['card']
+#   puts "You have " + score.to_s
+# end
+
+# 4. Enhance #3 by displaying a message if the score is over 21.
+# Example Output #1:
+# 7 A 6
+# You have 24.
+# You're busted!
+
 score = hand1['value'].to_i + hand2['value'].to_i
 
 
@@ -87,16 +105,10 @@ else
   puts "You have " + score.to_s
 end
 
-# 4. Enhance #3 by displaying a message if the score is over 21.
-# Example Output #1:
-# 7 A 6
-# You have 24.
-# You're busted!
+if score > 21
+  puts "You're busted"
 
-
-
-
-
+end
 
 
 # 5. Enhance #4 by considering an Ace to be 1 if it would prevent
