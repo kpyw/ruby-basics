@@ -47,28 +47,24 @@ hand = [hand1, hand2]
 
 puts "You have a " + hand[0] + " and a " + hand[1]
 
-score=0
+# score=0
 hand.each do |value|
   # hand=cards.sample
   # puts "your first card is a " + hand
-
+score=0
   if value =~ /^[2,3,4,5,6,7,8,9]/
-    score == value.to_i end
+    score == value.to_i
 
-  if value =~ /^[j,k,q]/
-    score += 10 end
+    elsif value =~ /^[j,k,q]/
+      score += 10
 
-  if /[a]/ =~ value
-        if score + 11 > 21
-          score += 1
-          #not working here
-        elsif
-          score += 11
-        end
-    end
+    elsif /[a]/ =~ value
+      score += 11
+  end
+puts score
 end
 
-puts "Your score is " + score
+# puts "Your score is " + score.to_s
 
 
 # end
