@@ -59,10 +59,13 @@ hand1=cards.sample
 hand2=cards.sample
 
 hand = [hand1, hand2]
-# puts hand1.class
-score == hand1['value'] + hand2['value']
+# puts hand1.class - hand1 is an array
+
 puts "You have a " + hand1['card'] + " and a " + hand2['card']
-puts "Your score is " + score
+
+score = hand1['value'].to_i + hand2['value'].to_i
+
+puts "You have " + score.to_s
 
 
 
