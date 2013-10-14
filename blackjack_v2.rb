@@ -16,8 +16,23 @@
 # 2 A
 
 #need to create a deck with 52 cards
-cards = %w(2 3 4 5 6 7 8 9 10 J Q K A) *4
-puts cards.sample(2)
+cards = [
+ {'card'=>'2', 'value'=>2},
+ {'card'=>'3', 'value'=>3},
+ {'card'=>'4', 'value'=>4},
+ {'card'=>'5', 'value'=>5},
+ {'card'=>'6', 'value'=>6},
+ {'card'=>'7', 'value'=>7},
+ {'card'=>'8', 'value'=>8},
+ {'card'=>'9', 'value'=>9},
+ {'card'=>'10', 'value'=>10},
+ {'card'=>'J', 'value'=>10},
+ {'card'=>'Q', 'value'=>10},
+ {'card'=>'K', 'value'=>10},
+ {'card'=>'A', 'value'=>11}
+   ]
+# puts cards.class
+# puts cards.sample(2)
 
 
 
@@ -37,38 +52,18 @@ puts cards.sample(2)
 # 2 A
 # You have 13.
 
-# cards.sort_by {rand}
+cards.sort_by {rand}
 # hand =[cards.pop, cards.pop]
 
 hand1=cards.sample
 hand2=cards.sample
 
 hand = [hand1, hand2]
+# puts hand1.class
+score == hand1['value'] + hand2['value']
+puts "You have a " + hand1['card'] + " and a " + hand2['card']
+puts "Your score is " + score
 
-puts "You have a " + hand[0] + " and a " + hand[1]
-
-# score=0
-hand.each do |value|
-  # hand=cards.sample
-  # puts "your first card is a " + hand
-score=0
-  if value =~ /^[2,3,4,5,6,7,8,9]/
-    score == value.to_i
-
-    elsif value =~ /^[j,k,q]/
-      score += 10
-
-    elsif value =~ /[a]/
-      score += 11
-  end
-puts score
-end
-
-# puts "Your score is " + score.to_s
-
-
-# end
-# puts hand[0].to_i + hand[1].to_i
 
 
 
